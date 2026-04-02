@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto+Mono:wght@400;700&display=swap');
+
+:root {
+    --bg-color: #0a0a0a;          
+    --accent-color: #00ff41;     
+    --text-color: #ffffff;        
+    --card-bg: #1a1a1a;           
+    --secondary-color: #ff0055;  
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Roboto Mono', monospace;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
+                      url('https://www.transparenttextures.com/patterns/stardust.png'); 
+}
+
+
+h1 {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 4rem;
+    text-align: center;
+    color: var(--accent-color);
+    text-shadow: 5px 5px 0px var(--secondary-color);
+    letter-spacing: 5px;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    transform: rotate(-2deg); 
+}
+
+h2 {
+    font-family: 'Permanent Marker', cursive;
+    color: var(--secondary-color);
+    border-bottom: 3px solid var(--accent-color);
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    gap: 30px;
+}
+
+
+.introduction, .box, .released_works {
+    background: var(--card-bg);
+    padding: 30px;
+    border: 2px solid #333;
+    border-radius: 0px; 
+    box-shadow: 10px 10px 0px var(--accent-color); 
+    transition: transform 0.3s ease;
+}
+
+.introduction:hover, .box:hover, .released_works:hover {
+    transform: translate(-5px, -5px);
+    box-shadow: 15px 15px 0px var(--secondary-color);
+}
+
+
+a {
+    display: inline-block;
+    color: var(--bg-color);
+    background-color: var(--accent-color);
+    padding: 8px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+a:hover {
+    background-color: var(--text-color);
+    color: #000;
+}
+
+
+.released_works p {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #ccc;
+}
+
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    .container {
+        padding: 10px;
+    }
+}
+
+
+.profile-container {
+    display: flex;
+    justify-content: center;
+    margin-top: -30px; 
+    margin-bottom: 40px;
+}
+
+
+.pfp {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; 
+    border: 5px solid var(--accent-color); 
+    object-fit: cover;
+    box-shadow: 0 0 20px var(--accent-color);
+    transition: all 0.4s ease;
+    filter: grayscale(20%); 
+}
+
+
+.pfp:hover {
+    transform: scale(1.1) rotate(5deg);
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 30px var(--secondary-color);
+    filter: grayscale(0%);
+    cursor: pointer;
+}
+
+
+@media (max-width: 600px) {
+    .pfp {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: rgba(10, 10, 10, 0.95); 
+    border-bottom: 3px solid var(--accent-color);
+    position: sticky; 
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-logo {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    text-shadow: 2px 2px var(--secondary-color);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+
+.nav-links a {
+    background: none; 
+    color: var(--text-color);
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--secondary-color);
+    transition: width 0.3s ease;
+    box-shadow: 0 0 10px var(--secondary-color);
+}
+
+.nav-links a:hover {
+    color: var(--secondary-color);
+    background: none; 
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        padding: 10px;
+    }
+    .nav-links {
+        margin-top: 10px;
+    }
+    .nav-links li {
+        margin: 0 10px;
+    }
+}
+
+html {
+    scroll-behavior: smooth; }
+
+.introduction, .box, .released_works {
+    scroll-margin-top: 100px; 
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(10, 10, 10, 0.95);
+    color: var(--text-color);
+    border-top: 3px solid var(--accent-color);
+    margin-top: 40px;
+}
+
+
+.poster-container {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap; 
+    justify-content: center;
+}
+
+
+.CoursePoster {
+    width: 100%;
+    max-width: 350px; 
+    height: auto;
+    border: 2px solid var(--accent-color);
+    box-shadow: 5px 5px 0px var(--secondary-color);
+    transition: transform 0.3s ease;
+}
+
+.CoursePoster:hover {
+    transform: scale(1.05);
+}
+
+
+@media (max-width: 600px) {
+    .CoursePoster {
+        max-width: 100%;
+    }
+}
